@@ -1,0 +1,124 @@
+<header class="header">
+  <a routerLink="/" class="header__logo">
+    <h6>Realizado por "Néstor Tigasi"</h6>
+  </a>
+  <div id="primary_nav_wrap" class="header__menu">
+    <section class="d-flex align-items-center justify-content-center">
+      <div
+        class="dropdown custom-dropdown status_dropdown"
+        data-color="created-status"
+      >
+        <button
+          class="btn-dropdown btn w-100 d-flex align-items-center justify-content-between status__btn"
+          type="button"
+          id="dropdownMenuButtonRoles"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          {{nombreUsuario}}
+        </button>
+        
+      </div>
+    </section>
+    <section class="d-flex align-items-center justify-content-center">
+      <div
+        class="dropdown custom-dropdown status_dropdown"
+        data-color="created-status"
+      >
+        <button
+          id="btn-correo"
+          class="btn-dropdown btn w-100 d-flex align-items-center justify-content-between status__btn"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+          {{correoUsuario}}
+          <i id="arrowCorreo" class="arrow material-icons">arrow_drop_down</i>
+        </button>
+        <ul class="dropdown-menu" style="width: 100%">
+          <li>
+            
+            <button
+              class="dropdown-item"
+              (click)="cerrarSeccion()"
+              style="display: flex; gap: 4px; align-items: center"
+            >
+              <i class="material-icons filters-icons">last_page</i> Cerrar
+              Session
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+  <div class="header__menu__mobile">
+    <i
+      (click)="clickMobileMenuProfile()"
+      class="material-icons"
+      style="cursor: pointer"
+      >account_circle</i
+    >
+    <i
+      class="material-icons"
+      (click)="clickMobileMenu()"
+      style="cursor: pointer"
+      >menu</i
+    >
+  </div>
+  <div class="bottom_menu__mobile__complete_screen">
+    <div
+      (click)="clickMobileMenuProfile()"
+      style="background: #0000009e; height: 100%; width: 100%"
+    ></div>
+    <div
+      style="
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 -2px 10px #00000029;
+        padding: 32px;
+      "
+    >
+      <section class="d-flex align-items-center justify-content-center">
+        <div
+          class="dropdown custom-dropdown status_dropdown"
+          data-color="created-status"
+        >
+          <button
+            class="btn-dropdown btn w-100 d-flex align-items-center justify-content-between status__btn"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            data-bs-offset="0,12"
+          >
+            {{nombreUsuario}}
+            <i id="arrow-created" class="arrow material-icons"
+              >arrow_drop_down</i
+            >
+          </button>
+        </div>
+      </section>
+      <section class="d-flex align-items-center justify-content-center">
+        <div
+          class="dropdown custom-dropdown status_dropdown"
+          data-color="created-status"
+        >
+          <button
+            id="btn-correo"
+            class="btn-dropdown btn w-100 d-flex align-items-center justify-content-between status__btn"
+            type="button"
+            data-bs-toggle="dropdown"
+          >
+            {{correoUsuario}}
+            <i id="arrowCorreo" class="arrow material-icons">arrow_drop_down</i>
+          </button>
+          <ul class="dropdown-menu" style="width: 100%">
+            <li>
+              <div class="dropdown-divider"></div>
+              <button class="dropdown-item">Cerrar Session</button>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,27 @@
+/* Boton de aceptar de Swal  */
+.swal2-styled.swal2-confirm {
+  background-color: var(--color-bg) !important;
+  color: black !important;
+  border: solid 0.5px #ccc !important;
+  box-shadow: none !important;
+}
+
+/* Color boton cancelar */
+.swal2-styled.swal2-deny {
+  background-color: var(--color-primary) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* titlo del swal */
+.swal2-title {
+  font-family: "Roboto", Arial, sans-serif !important;
+  padding-top: 32px !important;
+  font-size: 1.25rem !important;
+}
+
+/* descripcion de la swal  */
+.swal2-html-container {
+  font-family: "Roboto", Arial, sans-serif !important;
+  font-size: 1rem !important;
+}

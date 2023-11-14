@@ -1,0 +1,61 @@
+.dropdown-toggle::before {
+  transform: rotate(45deg);
+}
+
+#arrowCorreo,
+#arrow-created {
+  transform: rotate(-90deg);
+  transition: all 0.3s ease-in-out;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.img__logo {
+  margin-right: 10px;
+  padding: 6px 4px 4px 4px;
+  background: var(--color-primary);
+  width: 56px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__logo h6 {
+  cursor: pointer;
+  padding: 0.5rem;
+  margin: 0;
+  color: #495057;
+  font-weight: bold;
+  opacity: 0.95;
+}
+
+.bottom_menu__mobile__complete_screen.open {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  transition: opacity 0.5s;
+  width: 100%;
+  height: 100%;
+}
+
+.bottom_menu__mobile__complete_screen {
+  position: absolute;
+  opacity: 0;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+}

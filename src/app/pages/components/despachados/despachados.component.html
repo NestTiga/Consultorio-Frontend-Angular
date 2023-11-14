@@ -1,0 +1,49 @@
+<div class="turnos-container">
+    <div class="btnAgregar d-flex justify-content-between mb-4">
+      <div class="titulo">
+        <h5>Gestión de turnos despachados</h5>
+        <h6>Listado y filtrado de turnos que ya pasaron por la consulta médica</h6>
+      </div>
+      <!-- Componete botones -->
+    </div>
+  
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button
+          class="nav-link active"
+          id="nav-despachados-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-despachados"
+          type="button"
+          role="tab"
+          aria-controls="nav-despachados"
+          aria-selected="true"
+          (click)="clickMenuTipo('DESPACHADOS')"
+        >
+          Turnos despachados
+        </button>
+        
+      </div>
+    </nav>
+    <div class="card-body">
+      <div class="contenedor-componentes">
+        <!-- Componente pricipal -->
+        <div class="col-lg-12">
+          <div class="tab-content" id="nav-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="nav-despachados"
+              role="tabpanel"
+              aria-labelledby="nav-despachados-tab"
+            >
+              <app-mostrar-turnos-despachados></app-mostrar-turnos-despachados>
+            </div>
+            <div>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

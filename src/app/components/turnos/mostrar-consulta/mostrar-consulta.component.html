@@ -1,0 +1,62 @@
+<form [formGroup]="myForm" (ngSubmit)="addConsulta()" novalidate>
+    <div class="form-row row">
+      <div class="form-group col-12 col-md-12 pe-2 contentenedor-control">
+        <div class="form-group row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <label>Nombre</label>
+                <input type="text" class="form-control" id="nombre" value="{{ datosTurno.nombre }}" formControlName="nombre" readonly/>
+            </div>
+            <div class="col-sm-6">
+                <label>Apellido</label>
+                <input type="text" class="form-control" id="apellido" value="{{ datosTurno.apellido }}" formControlName="apellido" readonly/>
+                
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <label>Cédula</label>
+                <input type="text" class="form-control" id="cedula" value="{{ datosTurno.cedula }}" formControlName="cedula" readonly/>
+                
+            </div>
+            <div class="col-sm-6">
+                <label>Especialidad:</label>
+                <input type="text" class="form-control" id="especialidad" value="{{ datosTurno.especialidad }}" formControlName="especialidad" readonly/>
+                
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <label>Síntomas:</label>
+                <input type="text" class="form-control" id="sintomas" value="{{ datosTurno.sintomas }}" formControlName="sintomas" readonly/>
+                
+            </div>
+            <div class="col-sm-6">
+                <label>Observación</label>
+                <input type="text" class="form-control" id="observacion" value="{{ datosTurno.observacion }}" formControlName="observacion" readonly/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <label>Comentario:</label>
+                <textarea class="form-control" id="comentario" cols="3" placeholder="Ingrese un comentario" formControlName="comentario"></textarea>
+                <div for="comentario" *ngIf="myForm.get('comentario')?.touched && myForm.get('comentario')?.errors?.['required']"
+                class="alert alert-danger">Debe ingresar un comentario sobre la consulta médica</div>
+            </div>
+            <div class="col-sm-6">
+                <label>Receta médica</label>
+                <textarea class="form-control" id="receta" cols="3" placeholder="Ingrese una receta" formControlName="receta"></textarea>
+                <div for="receta" *ngIf="myForm.get('receta')?.touched && myForm.get('receta')?.errors?.['required']"
+                class="alert alert-danger">Debe ingresar la receta médica</div>
+            </div>
+        </div>
+        <label>Archivo</label>
+        <input type="file" id="archivo" (change)="CapturarArchivo($event)">
+        <input type="text" class="form-control" id="archivo" placeholder="Ingrese un archivo" [ngModel]="txtNombreArchivo" formControlName="archivo" hidden/>
+
+      </div>
+  
+      <button type="submit" class="btn btn-success btnDefaultPrimary btn-stilo" [disabled]="myForm.invalid || txtBotonG">
+        Guardar
+      </button>
+    </div>
+  </form>

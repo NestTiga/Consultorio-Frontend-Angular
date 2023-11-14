@@ -1,0 +1,62 @@
+<div >
+    <div>
+      <div class="container-carga">
+        <div class="hero__content">
+          <img
+            class="hero__img--1"
+            src="../../../assets/medico.jpg"
+            alt="hero image"
+          />
+          <img
+            class="hero__img--2"
+            src="../../../assets/doctor.jpg"
+            alt="hero image"
+          />
+        </div>
+  
+        <div class="container-real" style="z-index: 2;">
+          <!-- Contenido para el login -->
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="card shadow-lg rounded-lg mt-4">
+                                <div class="card-header"><h3 class="text-center" >Inicio de sesión</h3></div>
+                                <div class="card-body" >
+                                    <form [formGroup]="myForm" (ngSubmit)="Login()" novalidate>
+                                        <div class="form-row row">
+                                            <div class="form-group col-12 col-md-12 pe-2 contentenedor-control">
+                                                <div class="form-floating mb-3" style="margin-left: 7px;">
+                                                    <input type="email" class="form-control" id="correo" type="text" formControlName="correo" placeholder="Ingrese el correo del médico"/>
+                                                    <div for="correo" *ngIf="myForm.get('correo')?.touched && myForm.get('correo')?.errors?.['required']"
+                                                    class="alert alert-danger">Debe ingresar el correo del médico</div>
+                                                    <label for="usuario">Ingrese el correo del médico<span id="Requerido">&nbsp;*</span></label>
+                                                    
+                                                </div>
+                                                <div class="form-floating mb-3" style="margin-left: 7px;">
+                                                    <input class="form-control" id="contrasenia" type="password" formControlName="contrasenia" placeholder="Contraseña"/>
+                                                    <div for="contrasenia" *ngIf="myForm.get('contrasenia')?.touched && myForm.get('contrasenia')?.errors?.['required']"
+                                                    class="alert alert-danger">Debe ingresar la contraseña</div>
+                                                    <label for="contrasenia">Ingrese la contraseña<span id="Requerido">&nbsp;*</span></label>
+                                                </div>
+                                            </div>
+                                          <button type="submit" class="btn btn-dark btnDefaultPrimary btn-stilo" [disabled]="myForm.invalid">
+                                            Ingresar
+                                          </button>
+                                         
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+            <!-- Fin de contenido del login -->
+          <div class="container-footer">
+            <footer class="footer" style="background-color: #88A4A3;">
+                Tigasi Néstor © 2023
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

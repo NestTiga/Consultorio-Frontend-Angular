@@ -1,0 +1,59 @@
+<div id="sidebar__main_component" class="sidebar close">
+  <div id="btn-swap-sidebar" class="swap-button">
+    <i class="material-icons">reorder</i>
+  </div>
+  <ul class="nav-links">
+    <li *ngFor="let menu of menus">
+      <a (click)="openSubMenu($event, menu.path)">
+        <!-- routerLink="{{ menu.path }}" -->
+        <!-- [ngStyle]="{ 'pointer-events': menu.children ? 'none' : '' }" -->
+        <i class="material-icons main-icon-menu">{{
+          menu?.icon ? menu.icon : "dashboard"
+        }}</i>
+        <span
+          class="link_name"
+          style="
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            min-width: max-content;
+            cursor: pointer;
+          "
+          >{{ menu.name }}</span
+        >
+        <i *ngIf="menu.children" class="material-icons btn-arrow-sidebar"
+          >expand_more</i
+        >
+      </a>
+      <ul class="sub-menu">
+        <li class="sub-menu-header" (click)="openSubMenu($event, menu.path)">
+          <p class="link_name">{{ menu.name }}</p>
+        </li>
+        <div *ngIf="menu.children" class="sub-menu-list">
+          <li *ngFor="let submenu of menu.children" style="padding: 8px 16px">
+            <a routerLink="{{ menu.path }}{{ submenu.path }}">{{
+              submenu.name
+            }}</a>
+          </li>
+        </div>
+      </ul>
+    </li>
+  </ul>
+  <ul
+    class="nav-links"
+    style="height: fit-content; padding-bottom: 16px; overflow: visible"
+  >
+    <li>
+      <a href="/ajustes">
+        <i class="material-icons">settings</i>
+        <span class="link_name">Ajustes</span>
+      </a>
+      <ul class="sub-menu">
+        <li class="sub-menu-header">
+          <p class="link_name">Ajustes</p>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
